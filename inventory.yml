@@ -1,0 +1,53 @@
+es-master-nodes:
+  hosts:
+    es-master-1:                    # hostname
+      ansible_host: 192.168.33.25   # ip address
+      ansible_user: vagrant
+      memory: 2048                  # ram to be assigned in MB
+      ansible_ssh_private_key_file: .vagrant/machines/es-master-1/virtualbox/private_key
+
+es-data-nodes:
+  hosts:
+    es-data-1:
+      ansible_host: 192.168.33.26
+      ansible_user: vagrant
+      memory: 2048
+      ansible_ssh_private_key_file: .vagrant/machines/es-data-1/virtualbox/private_key
+
+    es-data-2:
+      ansible_host: 192.168.33.27
+      ansible_user: vagrant
+      memory: 2048
+      ansible_ssh_private_key_file: .vagrant/machines/es-data-2/virtualbox/private_key
+
+kibana-nodes:
+  hosts:
+    kibana-1:
+      ansible_host: 192.168.33.28
+      ansible_user: vagrant
+      memory: 512
+      ansible_ssh_private_key_file: .vagrant/machines/kibana-1/virtualbox/private_key
+
+logstash-nodes:
+  hosts:
+    logstash-1:
+      ansible_host: 192.168.33.29
+      ansible_user: vagrant
+      memory: 1536
+      ansible_ssh_private_key_file: .vagrant/machines/logstash-1/virtualbox/private_key
+
+filebeat-nodes:
+  hosts:
+    filebeat-1:
+      ansible_host: 192.168.33.30
+      ansible_user: vagrant
+      memory: 512
+      ansible_ssh_private_key_file: .vagrant/machines/filebeat-1/virtualbox/private_key
+
+    filebeat-2:
+      ansible_host: 192.168.33.31
+      ansible_user: vagrant
+      memory: 512
+      ansible_ssh_private_key_file: .vagrant/machines/filebeat-2/virtualbox/private_key
+
+

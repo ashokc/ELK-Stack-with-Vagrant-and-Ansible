@@ -1,0 +1,12 @@
+
+es_java_install: True
+update_java: False
+logstash_version: "{{ elk_version }}"
+logstash_user: logstashUser
+logstash_group: logstashGroup
+logstash_enabled_on_boot: yes
+logstash_install_plugins:
+  - logstash-input-beats
+esMasterHosts: "{% for host in groups['es-master-nodes'] %} http://{{hostvars[host]['ansible_'+public_iface]['ipv4']['address'] }}:{{cluster_http_port}}{% endfor %}"
+logstash_es_urls : "{{ esMasterHosts.split() }}"
+
