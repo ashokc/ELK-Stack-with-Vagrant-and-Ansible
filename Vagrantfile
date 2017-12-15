@@ -13,13 +13,6 @@ cpuCap = 10																		# Limit to 10% of the cpu
 inventory = YAML.load_file("inventory.yml")		# Get the names & ip addresses for the guest hosts
 VAGRANTFILE_API_VERSION = '2'
 
-def provision_ansible(config)
-	config.vm.provision "ansible" do |ansible|
-		ansible.playbook = "elkf.yml"
-		ansible.become = true
-	end
-end
-
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vbguest.auto_update = false
   inventory.each do |group, groupHosts|
@@ -37,6 +30,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      	end
     end
 	end
-  provision_ansible(config)
 end
 
