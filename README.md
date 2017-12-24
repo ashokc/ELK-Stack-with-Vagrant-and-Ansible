@@ -5,7 +5,14 @@ This is the source code to along with the blog article [ELK-Stack-with-Vagrant-a
 * Make sure that the host has sufficient CPU & RAM to build 7 vms as this one does.
 * You can adjust the memory requirements in 'inventory.yml'.
 
-Briefly:
+Uses the following roles:
+
+* [elastic.elasticsearch](https://galaxy.ansible.com/elastic/elasticsearch/) for Elasticsearch
+*	[ashokc.logstash](https://galaxy.ansible.com/ashokc/logstash/) for Logstash
+*	[ashokc.kibana](https://galaxy.ansible.com/ashokc/kibana/) for Kibana
+*	[ashokc.filebeat](https://galaxy.ansible.com/ashokc/filebeat/) for Filebeat
+
+Brief usage:
 
 ```
 vagrant up --no-provision
